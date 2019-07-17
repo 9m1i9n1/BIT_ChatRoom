@@ -27,7 +27,7 @@ public class Main {
          
          try {
                //서버 아이피 , 포트번호 -> 소켓 생성 -> 연결 요청
-               Socket socket = new Socket("localhost", 5000);
+               Socket socket = new Socket("192.168.0.11", 5000);
                //소켓 객체 생성
                cf.setSocket(socket);//메인에서 프레임 생성
                TcpClientReceiveThread th1 = cf.new TcpClientReceiveThread(socket);

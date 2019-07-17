@@ -26,6 +26,10 @@ public class ClientFrame extends JFrame{
        this.chatFrame = chatFrame;
     }
     
+    public Socket getSocket() {
+    	return this.socket;
+    }
+    
     public void sendMsg(String sendMessage) {
         try {
             bw.write(sendMessage+"\n");
