@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.net.Socket;
 
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 import Chatting.ClientFrame.TcpClientReceiveThread;
 
@@ -11,6 +12,10 @@ public class Main {
 
    public static void main(String args[]) {
       
+	   try {
+		   UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+	    }  catch (Exception e) { }
+	   
       String nickname = JOptionPane.showInputDialog("닉네임을 입력하세요!");
 
         if (nickname.length() > 0) {
@@ -22,7 +27,7 @@ public class Main {
          
          try {
                //서버 아이피 , 포트번호 -> 소켓 생성 -> 연결 요청
-               Socket socket = new Socket("192.168.0.9", 5000);
+               Socket socket = new Socket("192.168.0.8", 5000);
                //소켓 객체 생성
                cf.setSocket(socket);//메인에서 프레임 생성
                TcpClientReceiveThread th1 = cf.new TcpClientReceiveThread(socket);
