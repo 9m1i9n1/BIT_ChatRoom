@@ -71,8 +71,10 @@ public class ChattingFrame extends JFrame {
 		list = new JList();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 480, 600);
 		setTitle("2조 Chatting 프로그램");
+		setSize(480, 600);
+		setResizable(false);
+		setLocationRelativeTo(null);
 
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -93,7 +95,6 @@ public class ChattingFrame extends JFrame {
 	    }); 
 
 		list.setBorder(null);
-		list.setBounds(0, 0, 430, 445);
 
 		// ScrollPane에 List 추가
 		scrollPane.setViewportView(list);
@@ -106,7 +107,7 @@ public class ChattingFrame extends JFrame {
 		textField = new JTextField();
 		textField.setColumns(35);
 
-		btnSend = new JButton("\uC804\uC1A1");
+		btnSend = new JButton("전송");
 		// ===========================
 
 		// Panel에 ScrollPane 추가
